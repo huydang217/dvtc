@@ -6,18 +6,18 @@ const LoginPresentation = ({ username, setUsername, password, setPassword, handl
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder="Username"
+        placeholder="Email"
         value={username}
         onChangeText={setUsername}
       />
       <TextInput
         style={styles.input}
-        placeholder="Password"
+        placeholder="Mật khẩu"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
       />
-      <Button title="Login" onPress={handleLogin} />
+      <Button title="Đăng Nhập" onPress={handleLogin} />
     </View>
   );
 };

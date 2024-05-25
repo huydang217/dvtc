@@ -1,20 +1,29 @@
+import {
+    AuthError,
+    AuthTokenResponsePassword,
+    UserResponse,
+} from "@supabase/auth-js";
+import { supabase } from "../Supabase/Supabase";
+
 class AuthService {
-    static isAuthenticated = false;
-
-    static login(username, password) {
-        if (username === "user" && password === "password") {
-            AuthService.isAuthenticated = true;
-            return true;
-        }
-        return false;
+    static async signInWithPassword(
+        username: string,
+        password: string
+    ): Promise<AuthTokenResponsePassword> {
+        return await supabase.auth.signInWithPassword({
+            email: username,
+            password: password,
+        });
     }
 
-    static logout() {
-        AuthService.isAuthenticated = false;
+    static async signOut(): Promise<{ error: AuthError }> {
+        return await supabase.auth.signOut({
+            scope: "global",
+        });
     }
 
-    static checkAuth() {
-        return AuthService.isAuthenticated;
+    static async getUser(): Promise<UserResponse> {
+        return await supabase.auth.getUser();
     }
 }
 
