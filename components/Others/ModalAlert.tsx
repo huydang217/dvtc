@@ -6,7 +6,7 @@ const ModalAlert = ({ visible, message, onClose }) => {
   return (
     <Modal
       transparent={true}
-      animationType="slide"
+      animationType="fade"
       visible={visible}
       onRequestClose={onClose}
     >

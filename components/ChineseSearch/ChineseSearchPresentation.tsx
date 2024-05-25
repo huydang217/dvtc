@@ -6,6 +6,8 @@ import {
     Button,
     StyleSheet,
     FlatList,
+    SafeAreaView,
+    StatusBar,
 } from "react-native";
 
 const ChineseSearchPresentation = ({
@@ -24,7 +26,7 @@ const ChineseSearchPresentation = ({
     }[];
 }) => {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <Text style={styles.title}>Chinese Search</Text>
             <TextInput
                 style={styles.input}
@@ -40,9 +42,8 @@ const ChineseSearchPresentation = ({
                 color="#6200EE"
             />
             <FlatList
-                showsVerticalScrollIndicator={true}
                 data={results}
-            
+           
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={({ item }) => (
                     <View style={styles.resultCard}>
@@ -51,13 +52,14 @@ const ChineseSearchPresentation = ({
                     </View>
                 )}
             />
-        </View>
+        </SafeAreaView>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
- 
+        flex: 1,
+        marginTop: StatusBar.currentHeight || 0,
         padding: 16,
         backgroundColor: "#F5F5F5",
     },

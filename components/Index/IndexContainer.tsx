@@ -6,9 +6,7 @@ import AuthService from "../../services/Auth/AuthService";
 
 const IndexContainer = ({ navigation }) => {
     useEffect(() => {
-        AuthService.getUser().then((user) => {
-            if (user.error) navigation.replace("Login");
-        });
+       
     }, []);
 
     const handleLogout = () => {

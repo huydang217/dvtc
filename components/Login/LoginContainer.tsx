@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Button, TextInput, StyleSheet, Alert, Settings } from "react-native";
+import { View, Button, TextInput, StyleSheet, Alert, Settings, Text } from "react-native";
 
 import AuthService from "../../services/Auth/AuthService";
 import LoginPresentation from "./LoginPresentation";
@@ -25,12 +25,9 @@ const LoginContainer = ({ navigation }) => {
     };
 
     useEffect(() => {
-        AuthService.getUser().then((user) => {
-            if (user.data) navigation.replace("Index");
-            setLoading(false);
-        });
+       
     }, [isLoading]);
-    if (isLoading) return <>Loading....</>;
+    
     return (
         <LoginPresentation
             username={username}
