@@ -8,6 +8,18 @@
       "expo-router"
     ],
     "name": "dvtc",
-    "slug": "dvtc"
+    "slug": "dvtc",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "913d1dc2-4188-401a-8cdf-da23d7eaa2ed"
+      }
+    },
+    "owner": "huydangdh",
+    "android": {
+      "package": "com.huydangdh.dvtc"
+    }
   }
 }
